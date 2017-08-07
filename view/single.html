@@ -1,13 +1,13 @@
-<div class="container" style="padding-top:20px;">
-    <div class="container">
+<div class="container" style="padding-top:20px;" ng-init="apiGetArt()">
+    <div ng-init="getArticle()" class="container">
         <div class="row">
             <div class="col-lg-12 col-md-12 col-ms-12 col-xs-12"><br><br>
                 <!-- <h1 style="text-align:center;"></h1> -->
                 <div class="blog-header">
                     <div class="col-lg-8 col-md-8 col-ms-8">
-                        <h2>10 Fabulous Over-the-ankle Shoes to Wear This Season</h2>
+                        <h2>{{article.title}}</h2>
                         <h6>OCTOBER 12, 2016</h6>
-                        <img src="img/b2.jpg" style="width:100%;"> <br> <br>
+                        <img ng-src="{{article.media}}" style="width:100%;"> <br> <br>
                         <p>Find people with high expectations and a low tolerance for excuses. They’ll have higher expectations for you than you have for yourself. Don’t flatter yourself that this has much to do with you – this is just who they are. Don’t
                             look for “nice” in these relationships. Look for trust.</p>
                         <blockquote>
