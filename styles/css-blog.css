@@ -19,3 +19,12 @@ nav{
 .share-post-tit{
 	padding: 20px;
 }
+li{
+	list-style-type: none;
+}
+.block-comment {
+	border: 1px solid rgb(225, 225, 225);
+	height: 160px;
+	border-radius: 8px;
+	width: 50px;
+}

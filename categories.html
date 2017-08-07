@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<title>W3.CSS</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link href="styles/css-admin.css">
+
+<body ng-app="scotchApp" ng-controller="maincontroller">
+
+    <div class="w3-sidebar w3-bar-block w3-card-2 w3-animate-left side-bar" style="display:none;background-color:#009688;" id="mySidebar">
+        <button class="w3-bar-item w3-button w3-large" onclick="w3_close()">Close &times;</button>
+
+        <h3>Wellcome admin</h3>
+        <img src="img/me.jpg" class="img-circle" //border-radius// alt="Cinque Terre" width="100" height="100" style="margin:10px;padding:10px;">
+        <a href="index.html" class="w3-bar-item w3-button">Trang chủ</a>
+        <a href="admin.html" class="w3-bar-item w3-button">Admin- quản lý bài viết </a>
+        <a href="new-post.html" class="w3-bar-item w3-button">Đăng bài mới</a>
+        <a href="categories.html" class="w3-bar-item w3-button">Chuyện mục</a>
+        <a href="#" class="w3-bar-item w3-button">Quản lý bình luận</a>
+        <a href="#" class="w3-bar-item w3-button">Tin nhắn</a>
+    </div>
+
+    <div class="w3-main" id="main">
+
+        <div class="w3-teal">
+            <button class="w3-button w3-teal w3-xlarge" onclick="w3_open()">&#9776;</button>
+
+
+            <div class="w3-container">
+                <h1>Admin Page - Chuyên Mục</h1>
+            </div>
+        </div>
+        <div class="container">
+
+            <h2>Quản lý chuyên mục</h2>
+
+            <div class="table-responsive" ng-init="apiGetCat()">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>STT</th>
+                            <th>Tên chuyên mục</th>
+                            <th>Mô tả</th>
+                            <th>Ngày tạo</th>
+                            <th>Số bài đăng</th>
+                            <th>Thao tác</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="cat in categories">
+                            <td>1</td>
+                            <td>{{cat.name}}</td>
+                            <td>{{cat.description}}</td>
+                            <td>{{cat.create_date}}</td>
+                            <td>10</td>
+                            <td><button class="btn-defaul"><a href="#">Sửa</a></button><button class="btn-defaul"><a href="#">Xóa</a></button></td>
+                        </tr>
+
+
+                    </tbody>
+                </table>
+            </div>
+
+            <form ng-init="submitCreateCategory()">
+                <h2>Thêm chuyên mục</h2>
+                <input class="input-title form-control" ng-model="newCategory.name" type="text" placeholder="Nhập tiêu đề">
+                <h2>Mô tả</h2>
+                <textarea class="input-title form-control" rows="5" ng-model="newCategory.description" type="text" placeholder="Nhập mô tả"></textarea><br>
+                <button type="submit" class="btn btn-default">Submit</button>
+            </form>
+
+
+        </div>
+
+
+
+
+    </div>
+
+    <script>
+        function w3_open() {
+            document.getElementById("main").style.marginLeft = "18%";
+            document.getElementById("mySidebar").style.width = "18%";
+            document.getElementById("mySidebar").style.display = "block";
+            document.getElementById("openNav").style.display = 'none';
+        }
+
+        function w3_close() {
+            document.getElementById("main").style.marginLeft = "0%";
+            document.getElementById("mySidebar").style.display = "none";
+            document.getElementById("openNav").style.display = "inline-block";
+        }
+    </script>
+
+</body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
+<script src="/js/app-admin.js"></script>
+
+
+
+</html>
