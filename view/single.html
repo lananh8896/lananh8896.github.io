@@ -1,0 +1,174 @@
+<div class="container" style="padding-top:20px;" ng-init="apiGetArt()">
+    <div ng-init="getArticle()">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-ms-12 col-xs-12"><br><br>
+                <div class="col-lg-8 col-md-8 col-ms-8">
+                    <h2>{{article.title}}</h2>
+                    <h6>OCTOBER 12, 2016</h6>
+                    <img ng-src="{{article.media}}" style="width:100%;"> <br><br>
+                    <!-- <div ng-bind-html="article.content"> -->
+                    <div ng-bind-html="article.content" class="blog-content">
+                        {{article.content}}
+                    </div>
+
+
+                    </p><br><br>
+                    <div class="share-post">
+                        <div class="row">
+                            <div class="col-lg-2 col-md-2 col-sm-2">
+                                <span class="share-post-tit">SHARE</span>
+                            </div>
+                            <div class="td-social-button">
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                    <a href=""> <img src="img/fb-icon.png" style="width:100%;"></a>
+                                </div>
+                                <div class="col-lg-2 col-md-2 col-sm-2  col-xs-2">
+                                    <a href=""> <img src="img/fb-icon.png" style="width:100%;"></a>
+                                </div>
+                                <div class="col-lg-2 col-md-2 col-sm-2  col-xs-2">
+                                    <a href=""> <img src="img/fb-icon.png" style="width:100%;"></a>
+                                </div>
+                                <div class="col-lg-2 col-md-2 col-sm-2  col-xs-2">
+                                    <a href=""> <img src="img/fb-icon.png" style="width:100%;"></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <hr>
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 previous article" style="text-align:left;">
+                            <h6>Previous article</h6>
+                            <p><a href="">A Complete Guide to Finding the Best Spa in the World</a></p>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 next article" style="text-align:right;">
+                            <h6>Next article</h6>
+                            <p><a href="">How to Pick the Perfect House Plant for Positive Energy</a></p>
+                        </div>
+
+                        <div>
+                            <h2>Add a Comment</h2>
+                            <form ng-submit="submitCreateCategory()" method="POST" role="form" class="my-form fix-hack">
+                                <label class=""><h4>Email:</h4></label>
+                                <input type="text" val="" ng-model="newCategory.name" class="input-title form-control" placeholder="Nhập Email">
+                                <label class="title_input"><h4>Comment</h4></label>
+                                <textarea class="form-control" val="" ng-model="newCategory.description" class="my-form-area cat-input" rows="5" placeholder="Comment">
+
+                                    </textarea><br>
+
+
+                                <button type="submit" class="btn btn-success right clearfix clear ">Publish</button>
+                            </form>
+                        </div>
+
+                        <!-- code comment chi men -->
+                        <!-- <div class="input">
+                                <p>Add a Comment</p>
+                                <form ng-submit="addCommentforArticle()">
+                                   / <div class="form-group">
+                        <input type="text" class="form-control" id="usr" placeholder="Name">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="usr" placeholder="Email">
+                    </div> /
+                                    <div class="form-group">
+                                        <textarea ng-model="newComment.commentContent" class="form-control" rows="3" placeholder="Comment"></textarea>
+                                    </div>
+                                    <div class="readmore-block">
+                                        <button href="" class="btn btn-small btn-default btn-readmore " type="submit">Send comment</button>
+                                    </div>
+                                </form>
+                            </div> -->
+                    </div>
+
+                    <div class="row most-popular-post">
+                        <h3>Most Popular Post</h3>
+                        <div class="row">
+                            <div clas="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <div ng-repeat="post in randomArticles" class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                    <img class="m-thumbnail" ng-src="{{post.media}}">
+                                    <h6>{{getCategoryNameOfArticle(x._category)}}</h6>
+                                    <h5>{{post.title}}</h5>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                    <div class="button" style="float:center;">
+                        <!-- <button class="snip1562"><<</button>
+                                <button class="snip1562">>></button> -->
+                        <button class="button button2">Trước</button>
+                        <button class="button button2">Tiếp</button>
+                        <hr>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 side-bar">
+                    <div class="aboutme">
+                        <img src="img/me.jpg" class="img-circle" //border-radius// alt="Cinque Terre" width="250" height="250" style="margin:10px;padding:10px;">
+                        <h3>Anh Nguyen</h3>
+                        <p style="padding:10%;">I’m Alice Barkley. I love writing articles about all your favorite celebrities! Please contact me if you want to suggest something or just to say Hi!</p>
+                    </div>
+                    <div class="td-social-button">
+                        <div class="row">
+                            <div class="col-lg-3 col-md-3 col-sm-3">
+                                <i class="fa fa-pinterest-p" aria-hidden="true"></i>
+                            </div>
+                            <div class="col-lg-3 col-md-3 col-sm-3">
+                                <i class="fa fa-tumblr" aria-hidden="true"></i></div>
+                            <div class="col-lg-3 col-md-3 col-sm-3">
+                                <i class="fa fa-twitter" aria-hidden="true"></i></div>
+                            <div class="col-lg-3 col-md-3 col-sm-3">
+                                <i class="fa fa-facebook-official" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="latest-post">
+                        <h5 class="tit-latest-post">Latest Post</h5>
+
+                        <div ng-repeat="post in popularArticles">
+                            <h4>{{post.title}}</h4>
+                            <div class="meta-info">
+                                <span><a href="" class="author">{{post._author.name}}</a></span>
+                                <span><time class="date-updated">{{post.createdDate}}</time></span>
+                            </div><br>
+                            <hr>
+                        </div>
+
+                    </div>
+
+                    <div class="block-instagram">
+                        <h5 class="tit-latest-post">Instagram</h5>
+                        <div class="row" style="padding:1px 10px;">
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 ins-img"><img src="img/small/9-324x235.jpg" style="width:100%;"></div>
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 ins-img"><img src="img/small/24-324x235.jpg" style="width:100%;"></div>
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 ins-img"><img src="img/small/9-324x235.jpg" style="width:100%;"></div>
+                        </div>
+                        <div class="row" style="padding:1px 10px;">
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 ins-img"><img src="img/small/9-324x235.jpg" style="width:100%;"></div>
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 ins-img"><img src="img/small/24-324x235.jpg" style="width:100%;"></div>
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 ins-img"><img src="img/small/9-324x235.jpg" style="width:100%;"></div>
+                        </div>
+                        <div class="row" style="padding:1px 10px;">
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 ins-img"><img src="img/small/9-324x235.jpg" style="width:100%;"></div>
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 ins-img"><img src="img/small/24-324x235.jpg" style="width:100%;"></div>
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 ins-img"><img src="img/small/9-324x235.jpg" style="width:100%;"></div>
+                        </div>
+                    </div>
+                    <div class="block-category">
+                        <h5 class="tit-latest-post">Category</h5>
+                        <p>
+                            <ul>
+                            </ul>
+                        </p>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>

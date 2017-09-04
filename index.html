@@ -4,99 +4,127 @@
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
+    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
 
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <!-- Optional theme -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-    <!-- Latest compiled and minified JavaScript -->
+    <link rel="stylesheet" href="/bower_components/ng-tags-input/ng-tags-input.min.css">
+    <link rel="stylesheet" href="/bower_components/ng-tags-input/ng-tags-input.bootstrap.min.css">
+    <link rel='stylesheet' href='/bower_components/textAngular/dist/textAngular.css'>
+
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" type="text/css" href="styles/css-index.css">
+    <link rel="stylesheet" type="text/css" href="styles/css-blog.css">
+
 </head>
 
 <body ng-controller="maincontroller" ng-init="apiGetCat()">
-    <nav class="navbar navbar-fixed-top">
-        <div class="row">
-            <div class="col-sm-4">
-                <div class="navbar-header">
-
-                    <a href="#/" class="w3-bar-item w3-button blog-tittle" style="padding:0px 16px;">
-                          Mia's Blog</a>
+    <div class="container-fluid">
+        <div class="td-header-row td-header-top-menu">
+            <div class="w3-col m12">
+                <div>
+                    <h6 class="container">Saturday, August 19, 2017</h6>
                 </div>
             </div>
-            <div class="col-sm-8 ">
-                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
-                    <a href="admin.html" class="w3-bar-item w3-button right-bar">Admin</a>
-                    <button type="button" class="w3-bar-item w3-button right-bar" data-toggle="modal" data-target="#loginModal">Log In</button>
-                    <button type="button" class="w3-bar-item w3-button right-bar" data-toggle="modal" data-target="#signupModal">Sign Up</button>
-                    <a href="#/detail" class="w3-bar-item w3-button right-bar">Travel</a>
-                    <a href="#/detail" class="w3-bar-item w3-button right-bar">Blog</a>
-                    <a ng-repeat="x in categories" href="#" class="w3-bar-item w3-button right-bar">{{x.name}}</a>
-                </div>
+            <div class="td-header-sp-top-widget">
+                <span></span>
             </div>
         </div>
-    </nav>
-    <div class="header">
-        <!-- <img src="img/header-bg.jpeg" style="width:100%;"> -->
-        <h1>Life Is a Journey</h1>
-        <p></p>
-    </div>
+        <div class="container td-header-row td-header-header ">
+            <div class="row ">
+                <div class="col-lg-3 col-md-3 col-sm-3 ">
+                    <h2>BING NEW</h2>
+                    <!-- <img src="img/logo.jpg " style="width:100%; "> -->
+                </div>
+                <div class="col-lg-9 col-md-9 col-sm-9 ">
+
+                </div>
+            </div>
+
+        </div>
+        <nav class="navbar">
+            <div class="container ">
+
+                <!-- <div class="col-sm-4 blog-name ">
+
+                        <h6 class="blog-tit"><a href="#/ " class="blog-name ">HOME</a></h6>
+
+                    </div> -->
+                <ul>
+                    <li><a href="#/ " class="blog-name ">HOME</a></li>
+                    <li><a href="#">About us</a></li>
+                    <li class="dropdown ">
+                        <div href="javascript:void(0) ">
+                            <a class="dropbtn " href="# ">
+                                      Category  <span class="caret "></span></a>
+                            <div class="dropdown-content ">
+                                <a ng-repeat="x in categories " href="#categories/{{x._id}} ">{{x.name}}</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li><a data-toggle="modal" href="#loginModal ">Log In</a></li>
+                    <li><a data-toggle="modal" data-target="#signupModal ">Sign Up</a></li>
+                    <li><a href="admin/admin.html ">Admin</a></li>
+
+                </ul>
+
+            </div>
+        </nav>
+        <div class="end-header">.</div>
+
     </div>
 
-    <div id="main">
 
+    <div id="main ">
         <!-- angular templating -->
         <!-- this is where content will be injected -->
         <div ng-view></div>
 
     </div>
 
-    <div class="container-fluid">
-        <h4>FOLLOW ME ON INSTAGRAM @MIA_MIA</h4>
-        <div class="zoom-effect-container">
-            <div class="image-card">
-                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 gallery">
-                    <img src="img/blog02.jpg" style="width:100%;" class="view hm-zoom">
+    <div class="container-fluid ">
+        <h4 style="text-align:center; ">FOLLOW ME ON INSTAGRAM @MIA_MIA</h4>
+        <div class="zoom-effect-container ">
+            <div class="image-card ">
+                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 gallery ">
+                    <img src="img/blog02.jpg " style="width:100%; " class="view hm-zoom ">
                 </div>
-                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 gallery">
-                    <img src="img/blog01.jpg" style="width:100%;" class="view hm-zoom">
+                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 gallery ">
+                    <img src="img/blog01.jpg " style="width:100%; " class="view hm-zoom ">
                 </div>
-                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 gallery">
-                    <img src="img/blog04.jpg" style="width:100%;" class="view hm-zoom">
+                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 gallery ">
+                    <img src="img/blog02.jpg " style="width:100%; " class="view hm-zoom ">
                 </div>
-                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 gallery">
-                    <img src="img/blog07.jpg" style="width:100%;" class="view hm-zoom">
+                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 gallery ">
+                    <img src="img/blog01.jpg " style="width:100%; " class="view hm-zoom ">
                 </div>
             </div>
         </div>
     </div>
 
-    <footer class="footer-Section">
-        <div class="footer-top-layout">
-            <div class="container">
-                <div class="row">
-                    <div class=" col-sm-10 col-lg-offset-2">
-                        <div class="col-sm-3">
-                            <div class="footer-col-item">
-                                <h3 style="text-align:left;">Life Is a Journey</h3>
+    <footer class="footer-Section ">
+        <div class="footer-top-layout ">
+            <div class="container ">
+                <div class="row ">
+                    <div class=" col-sm-10 col-lg-offset-2 ">
+                        <div class="col-sm-3 ">
+                            <div class="footer-col-item ">
+                                <h3 style="text-align:left; ">Life Is a Journey</h3>
                                 <address>
                   501,507 your company address<br>
                   400015 Maharashtra, US
                   </address>
                             </div>
                         </div>
-                        <div class="col-sm-4">
+                        <div class="col-sm-4 ">
                             <h5>ABOUT US</h5>
                             <p>Newspaper is your news, entertainment, music fashion website. We provide you with the latest breaking news and videos straight from the entertainment industry.</p>
                         </div>
-                        <div class="col-sm-3">
-                            <div class="footer-col-item">
+                        <div class="col-sm-3 ">
+                            <div class="footer-col-item ">
                                 <h5>Sign up for Newsletter</h5>
-                                <form class="signUpNewsletter" action="" method="get">
-                                    <input name="" class="gt-email form-control" placeholder="You@youremail.com" type="text" style="color:black;">
-                                    <!-- <input name="" class="btn-defaul" value="Go" type="button" style="background-color:white;
-                    color:black;"> --></form>
+                                <form class="signUpNewsletter " action=" " method="get ">
+                                    <input name=" " class="gt-email form-control " placeholder="You@youremail.com " type="text " style="color:black; ">
+                                    <!-- <input name=" " class="btn-defaul " value="Go " type="button " style="background-color:white; color:black; "> --></form>
                             </div>
                         </div>
                     </div>
@@ -107,109 +135,111 @@
     </footer>
 
     <!--model login   -->
-    <div class="modal fade" id="loginModal" role="dialog">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h2 class="modal-title">Log in Form</h2>
+    <div class="modal fade " id="loginModal " role="dialog ">
+        <div class="modal-dialog ">
+            <div class="modal-content ">
+                <div class="modal-header ">
+                    <button type="button " class="close " data-dismiss="modal ">&times;</button>
+                    <h2 class="modal-title ">Log in Form</h2>
                 </div>
-                <div class="modal-body">
-                    <form ng-submit="login()">
-                        <div class="form-group">
-                            <label for="email">Email:</label>
-                            <input ng-model="user.email" type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+                <div class="modal-body ">
+                    <form ng-submit="login() ">
+                        <div class="form-group ">
+                            <label for="email ">Email:</label>
+                            <input ng-model="user.email " type="email " class="form-control " id="email " placeholder="Enter email " name="email ">
                         </div>
-                        <div class="form-group">
-                            <label for="pwd">Password:</label>
-                            <input ng-model="user.password" type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd">
+                        <div class="form-group ">
+                            <label for="pwd ">Password:</label>
+                            <input ng-model="user.password " type="password " class="form-control " id="pwd " placeholder="Enter password " name="pwd ">
                         </div>
-                        <div class="checkbox">
-                            <label><input type="checkbox" name="remember"> Remember me</label>
+                        <div class="checkbox ">
+                            <label><input type="checkbox " name="remember "> Remember me</label>
                         </div>
-                        <button type="submit" class="btn btn-default">Submit</button>
+                        <button type="submit " class="btn btn-default ">Submit</button>
                     </form>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <div class="modal-footer ">
+                    <button type="button " class="btn btn-default " data-dismiss="modal ">Close</button>
                 </div>
             </div>
         </div>
     </div>
     <!--signupModal  -->
-    <div class="modal fade" id="signupModal" role="dialog">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h2 class="modal-title">Sign Up Form</h2>
+    <div class="modal fade " id="signupModal " role="dialog ">
+        <div class="modal-dialog ">
+            <div class="modal-content ">
+                <div class="modal-header ">
+                    <button type="button " class="close " data-dismiss="modal ">&times;</button>
+                    <h2 class="modal-title ">Sign Up Form</h2>
                 </div>
-                <div class="modal-body">
-                    <form ng-submit="signup()">
-                        <div class="form-group">
-                            <label for="name">Full Name</label>
-                            <input ng-model="newUser.name" type="text" class="form-control" id="name" placeholder="Full Name" name="name">
+                <doiv class="modal-body ">
+                    <form ng-submit="signup() ">
+                        <div class="form-group ">
+                            <label for="name ">Full Name</label>
+                            <input ng-model="newUser.name " type="text " class="form-control " id="name " placeholder="Full Name " name="name ">
                         </div>
-                        <div class="form-group">
-                            <label for="email">Email:</label>
-                            <input ng-model="newUser.email" type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+                        <div class="form-group ">
+                            <label for="email ">Email:</label>
+                            <input ng-model="newUser.email " type="email " class="form-control " id="email " placeholder="Enter email " name="email ">
                         </div>
-                        <div class="form-group">
-                            <label for="pwd">Password:</label>
-                            <input ng-model="newUser.password" type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd">
+                        <div class="form-group ">
+                            <label for="pwd ">Password:</label>
+                            <input ng-model="newUser.password " type="password " class="form-control " id="pwd " placeholder="Enter password " name="pwd ">
                         </div>
-                        <div class="checkbox">
-                            <label><input type="checkbox" name="remember"> Remember me</label>
+                        <div class="checkbox ">
+                            <label><input type="checkbox " name="remember "> Remember me</label>
                         </div>
-                        <button type="submit" class="btn btn-default">Submit</button>
+                        <button type="submit " class="btn btn-default ">Submit</button>
                     </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                </div>
+            </div>
+            <div class="modal-footer ">
+                <button type="button " class="btn btn-default " data-dismiss="modal ">Close</button>
             </div>
         </div>
     </div>
+    </div>
 
+
+    <!-- <a class="btn btn-primary" data-toggle="modal" href='#modal-id'>Trigger modal</a>
+    <div class="modal fade" id="modal-id">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title">Modal title</h4>
+                </div>
+                <div class="modal-body">
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div> -->
 
 
 
 
 </body>
 
-<script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
+<script src="/bower_components/jquery/dist/jquery.min.js "></script>
+<script src="/bower_components/bootstrap/dist/js/bootstrap.min.js "></script>
+<script src="/bower_components/angular/angular.min.js "></script>
+<script src="/bower_components/angular-route/angular-route.min.js "></script>
+<script src="/bower_components/ng-tags-input/ng-tags-input.min.js "></script>
+<script src='/bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js'></script>
 
-<script src="js/app-admin.js"></script>
+<script src='/bower_components/textAngular/dist/textAngular-rangy.min.js'></script>
+<script src='/bower_components/textAngular/dist/textAngular-sanitize.min.js'></script>
+<script src='/bower_components/textAngular/dist/textAngular.min.js'></script>
 
 
+
+
+<script src="scripts/app.js "></script>
+<script src="scripts/maincontroller.js "></script>
 
 </html>
-
-
-
-
-
-
-
-
-<!-- https://www.w3schools.com/w3css/tryw3css_templates_gourmet_catering.htm#contact
-
-    https: //www.w3schools.com/w3css/tryw3css_templates_food_blog.htm#
-
-
-        https: //www.w3schools.com/w3css/tryw3css_templates_dark_portfolio.htm#contact
-
-        https: //bootsnipp.com/snippets/50lO5
-
-        http: //littlesnippets.net/category/categories/image-hovers/page/3/
-        http: //littlesnippets.net/category/categories/image-hovers/page/5/
-
-        https: //demo.tagdiv.com/newspaper_blog_beauty/td-post-10-fabulous-over-the-ankle-shoes-to-wear-this-season/
-        -->
-
-<!-- maximum line
-        fix line css -->

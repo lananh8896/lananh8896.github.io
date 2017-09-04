@@ -1,0 +1,156 @@
+<div ng-init="apiGetArt()" class="container">
+
+
+    <div class="container">
+        <!--<div class="most-popular">
+            <h3>Most Popular Post</h3>
+            <div class="row">
+                <div clas="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                        <img src="img/p3.jpg" style="width:100%;">
+                        <h6>Style</h6>
+                        <a href="">How To Match Your Leather Hat With Your Summer Dress</a>
+                    </div>
+
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                        <img src="img/p3.jpg" style="width:100%;">
+                        <h6>Style</h6>
+                        <a href="">How To Match Your Leather Hat With Your Summer Dress</a>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                        <img src="img/p3.jpg" style="width:100%;">
+                        <h6>Style</h6>
+                        <a href="">How To Match Your Leather Hat With Your Summer Dress</a>
+                    </div>
+                </div>
+            </div>
+        </div>-->
+    </div>
+    <hr/><br/>
+    <div class="container content-about">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="row">
+                    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                        <!--<h6>Travle</h6>
+                        <h2>Top 10 Places You Would Rather Be</h2>
+                        <h6>OCTOBER 12, 2016</h6>
+                        <img src="img/post1.jpg" style="width:100%;"><br><br>
+                        <p>We all get times when we feel like getting away from our daily routines and try a bit of travel and adventure, take a few moments out of you day to look at the amazing places. Wouldn’t you love to drop everything and just go there
+                            right now?</p>
+                        <div class="td-read-more">
+
+                            <button class="snip1562">Read More</button>
+                            <hr>
+                        </div>-->
+                        <br>
+                        <div class="row">
+                            <h4>{{getCategoryNameOfArticle(currentCategoryID)}}</h4>
+                            <div ng-repeat="x in articlesInCategory" class="row post-latest-detail">
+
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                    <a href="#detail/{{x._id}}"><img ng-src="{{x.media}}" style="width:100%;"></a>
+                                </div>
+                                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                                    <h4><a href="#detail/{{x._id}}">{{x.title}}</a></h4>
+                                    <div class="meta-info">
+                                        <span><a href="" class="">Tác giả: </a></span>
+                                        <span><a href="" class="author">{{x._author.name}}</a></span>
+                                        <span><time class="date-updated">{{x.createdDate}}</time></span>
+                                    </div><br>
+                                    <p>{{x.description}}</p>
+                                    <!-- <button class=".btn-primary">Read More</button> -->
+                                </div>
+                            </div>
+                            <br>
+                            <hr><br>
+                        </div>
+                        <br><br>
+                        <div style="text-align:center;">
+                            <!-- <button class="snip1562">Show More</button> -->
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 side-bar">
+                        <div class="aboutme">
+                            <img src="img/me.jpg" class="img-circle" //border-radius// alt="Cinque Terre" width="200" height="200" style="margin:10px;padding:10px;">
+                            <h3>Anh Nguyen</h3>
+                            <p style="padding:10%;">I’m Alice Barkley. I love writing articles about all your favorite celebrities! Please contact me if you want to suggest something or just to say Hi!</p>
+                        </div>
+                        <div class="td-social-button">
+                            <div class="row">
+                                <div class="col-lg-3 col-md-3 col-sm-3">
+                                    <i class="fa fa-pinterest-p" aria-hidden="true"></i>
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-3">
+                                    <i class="fa fa-tumblr" aria-hidden="true"></i></div>
+                                <div class="col-lg-3 col-md-3 col-sm-3">
+                                    <i class="fa fa-twitter" aria-hidden="true"></i></div>
+                                <div class="col-lg-3 col-md-3 col-sm-3">
+                                    <i class="fa fa-facebook-official" aria-hidden="true"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="latest-post">
+                            <h5 class="tit-latest-post">Latest Post</h5>
+                            <!-- <div class="row">
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                     <img src="img/small/5-324x235.jpg" style="width:100%;"> 
+                                </div>
+                                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                                    <h5 class="tit-artical-sidebar"><a href="">1.7 Soaps to Supercharge Your Daily Skincare Routine</a></h5>
+                                    <div class="meta-info">
+                                        <span class="post-category">Make up</span>
+                                        <span class="date-updated"><time class="date-updated">OCTOBER 12, 2016</time></span>
+                                    </div>
+                                </div>
+                            </div> -->
+                            <div ng-repeat="x in articles">
+                                <h4><a href="#detail/{{x._id}}">{{x.title}}</a></h4>
+                                <div class="meta-info">
+                                    <span><a href="" class="author">{{x._author.name}}</a></span>
+                                    <span><time class="date-updated">{{x.createdDate}}</time></span>
+                                </div><br>
+                                <hr>
+                            </div>
+
+                        </div>
+                        <div class="block-instagram">
+                            <h5 class="tit-latest-post">Instagram</h5>
+                            <div class="row" style="padding:1px 10px;">
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 ins-img"><img src="img/small/9-324x235.jpg" style="width:100%;"></div>
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 ins-img"><img src="img/small/24-324x235.jpg" style="width:100%;"></div>
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 ins-img"><img src="img/small/9-324x235.jpg" style="width:100%;"></div>
+                            </div>
+                            <div class="row" style="padding:1px 10px;">
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 ins-img"><img src="img/small/9-324x235.jpg" style="width:100%;"></div>
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 ins-img"><img src="img/small/24-324x235.jpg" style="width:100%;"></div>
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 ins-img"><img src="img/small/9-324x235.jpg" style="width:100%;"></div>
+                            </div>
+                            <div class="row" style="padding:1px 10px;">
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 ins-img"><img src="img/small/9-324x235.jpg" style="width:100%;"></div>
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 ins-img"><img src="img/small/24-324x235.jpg" style="width:100%;"></div>
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 ins-img"><img src="img/small/9-324x235.jpg" style="width:100%;"></div>
+                            </div>
+
+                        </div>
+                        <div class="block-category">
+                            <h5 class="tit-latest-post">Category</h5>
+                            <p>
+                                <ul>
+                                    <!-- <li><a ng-repeat="x in categories" href="#">{{x.name}}</a></li> -->
+                                </ul>
+                            </p>
+                        </div>
+                        <hr>
+                    </div>
+
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr>
+</div> <br><br>
