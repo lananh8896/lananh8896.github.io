@@ -1,6 +1,7 @@
 <div class="container">
     <div class="top-art">
         <div class="row">
+<<<<<<< HEAD
             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 top-art">
                 <img src="img/001.jpg" style="width:100%;">
             </div>
@@ -23,10 +24,23 @@
                 </div>
             </div>
 
+=======
+            <!--<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12" style="margin-bottom:10px;padding-top:20px;" style="padding-top:10px;">
+                <img src="img/p3.jpg" style="width:100%;">
+            </div>
+            <div class="col-lg-4 col-md-4  col-sm-4 col-xs-12" style="margin-bottom:25px;padding-top:20px;">
+                <img src="img/p3.jpg" style="width:100%;">
+
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" style="margin-bottom:25px;">
+                <img src="img/p3.jpg" style="width:100%;">
+            </div>-->
+>>>>>>> 1dc982b344fd2eb349ef5cd2c0d7d96eed353162
         </div>
     </div>
 
     <div class="container">
+<<<<<<< HEAD
         <h3>Tin Nhanh</h3>
         <div class="row">
             <div clas="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -39,10 +53,36 @@
             </div>
         </div>
 
+=======
+        <!--<div class="most-popular">
+            <h3>Most Popular Post</h3>
+            <div class="row">
+                <div clas="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                        <img src="img/p3.jpg" style="width:100%;">
+                        <h6>Style</h6>
+                        <a href="">How To Match Your Leather Hat With Your Summer Dress</a>
+                    </div>
+
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                        <img src="img/p3.jpg" style="width:100%;">
+                        <h6>Style</h6>
+                        <a href="">How To Match Your Leather Hat With Your Summer Dress</a>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                        <img src="img/p3.jpg" style="width:100%;">
+                        <h6>Style</h6>
+                        <a href="">How To Match Your Leather Hat With Your Summer Dress</a>
+                    </div>
+                </div>
+            </div>
+        </div>-->
+>>>>>>> 1dc982b344fd2eb349ef5cd2c0d7d96eed353162
     </div>
     <hr/><br/>
     <div ng-init="apiGetArt()" class="container content-about">
         <div class="row">
+<<<<<<< HEAD
             <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
 
                 <h2>Bài mới nhất</h2>
@@ -75,6 +115,26 @@
                                 <div class="m-thumbnail">
                                     <a href="#detail/{{x._id}}"><img class="portrait" ng-src="{{x.media}}" style="width:100%;"></a>
                                 </div>
+=======
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="row">
+                    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                        <!--<h6>Travle</h6>
+                        <h2>Top 10 Places You Would Rather Be</h2>
+                        <h6>OCTOBER 12, 2016</h6>
+                        <img src="img/post1.jpg" style="width:100%;"><br><br>
+                        <p>We all get times when we feel like getting away from our daily routines and try a bit of travel and adventure, take a few moments out of you day to look at the amazing places. Wouldn’t you love to drop everything and just go there
+                            right now?</p>
+                        <div class="td-read-more">
+
+                            <button class="snip1562">Read More</button>
+                            <hr>
+                        </div>-->
+                        <br>
+                        <div ng-repeat="x in articles" class="row">
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                <a href="#detail/{{x._id}}"><img ng-src="{{x.media}}" style="width:100%;"></a>
+>>>>>>> 1dc982b344fd2eb349ef5cd2c0d7d96eed353162
                             </div>
                             <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7">
                                 <h4><a href="#detail/{{x._id}}">{{x.title}}</a></h4>
