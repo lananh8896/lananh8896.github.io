@@ -1,27 +1,40 @@
 <div class="container">
-    <div class="">
+    <div class="top-art">
         <div class="row">
-            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12" style="margin-bottom:10px;padding-top:20px;" style="padding-top:10px;">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 top-art">
                 <img src="img/001.jpg" style="width:100%;">
             </div>
-            <div class="col-lg-4 col-md-4  col-sm-4 col-xs-12" style="margin-bottom:25px;padding-top:20px;">
-                <img src="img/001.jpg" style="width:100%;">
+            <div class="col-lg-6 col-md-6  col-sm-6 col-xs-6 top-art">
+                <div>
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 top-art">
+                        <img src="img/001.jpg" style="width:100%;">
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 top-art">
+                        <img src="img/001.jpg" style="width:100%;">
+                    </div>
+                </div>
+                <div>
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 top-art">
+                        <img src="img/001.jpg" style="width:100%;">
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 top-art">
+                        <img src="img/001.jpg" style="width:100%;">
+                    </div>
+                </div>
+            </div>
 
-            </div>
-            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" style="margin-bottom:25px;">
-                <img src="img/001.jpg" style="width:100%;">
-            </div>
         </div>
     </div>
 
     <div class="container">
-        <h3>Most Popular Post</h3>
+        <h3>Tin Nhanh</h3>
         <div class="row">
             <div clas="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <div ng-repeat="post in randomArticles" class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                     <img class="m-thumbnail" ng-src="{{post.media}}">
-                    <h6>{{getCategoryNameOfArticle(x._category)}}</h6>
+                    <!-- <h6>{{getCategoryNameOfArticle(x._category)}}</h6> -->
                     <h5><a href="#detail/{{x._id}}">{{post.title}}</a></h5>
+
                 </div>
             </div>
         </div>
@@ -31,6 +44,9 @@
     <div ng-init="apiGetArt()" class="container content-about">
         <div class="row">
             <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
+
+                <h2>Bài mới nhất</h2>
+
                 <div ng-repeat="x in articles.slice(((currentPage-1)*itemsPerPage), ((currentPage)*itemsPerPage))" class="row">
                     <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5 ">
                         <div class="m-thumbnail">
@@ -45,20 +61,48 @@
                             <span><time class="date-updated">{{x.createdDate}}</time></span>
                         </div><br>
                         <p>{{x.description}}</p>
-                        <!-- <button class=".btn-primary">Read More</button> -->
+                        <button class="btn btn-info">Read More</button>
                     </div>
                 </div>
                 <ul uib-pagination total-items="totalItems" ng-model="currentPage" ng-change="pageChanged()" max-size="maxSize" class="pagination-sm" items-per-page="itemsPerPage" boundary-links="true" force-ellipses="true"></ul>
-                <div style="text-align:center;">
-                    <!-- <button class="snip1562">Show More</button> -->
+
+
+                <div class="row">
+                    <h2>Tin theo chuyên mục</h2>
+                    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                        <div ng-repeat="x in articles.slice(((currentPage-1)*itemsPerPage), ((currentPage)*itemsPerPage))" class="row">
+                            <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5 ">
+                                <div class="m-thumbnail">
+                                    <a href="#detail/{{x._id}}"><img class="portrait" ng-src="{{x.media}}" style="width:100%;"></a>
+                                </div>
+                            </div>
+                            <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7">
+                                <h4><a href="#detail/{{x._id}}">{{x.title}}</a></h4>
+                                <!-- <div class="meta-info">
+                                    <span><a href="" class="">Tác giả: </a></span>
+                                    <span><a href="" class="author">{{x._author.name}}</a></span><br>
+                                    <span><time class="date-updated">{{x.createdDate}}</time></span>
+                                </div><br>
+                                <p>{{x.description}}</p> -->
+                                <button class="btn-primary-info">Read More</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                        <div ng-repeat="x in articles.slice(((currentPage-1)*itemsPerPage), ((currentPage)*itemsPerPage))" class="row">
+                            <h5><a href="#detail/{{x._id}}">{{x.title}}</a></h5>
+                            <!-- <div class="meta-info">
+                                <span><a href="" class="">Tác giả: </a></span>
+                                <span><a href="" class="author">{{x._author.name}}</a></span><br>
+                                <span><time class="date-updated">{{x.createdDate}}</time></span>
+                            </div><br> 
+                            <p>{{x.description}}</p>   -->
+                        </div>
+                    </div>
                 </div>
             </div>
+
             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 side-bar">
-                <!-- <div class="aboutme">
-                            <img src="img/me.jpg" class="img-circle" //border-radius// alt="Cinque Terre" width="200" height="200" style="margin:10px;padding:10px;">
-                            <h3>Anh Nguyen</h3>
-                            <p style="padding:10%;">I’m Alice Barkley. I love writing articles about all your favorite celebrities! Please contact me if you want to suggest something or just to say Hi!</p>
-                        </div> -->
                 <div class="td-social-button">
                     <div class="row">
                         <div class="col-lg-3 col-md-3 col-sm-3">
@@ -73,22 +117,33 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="latest-post">
-                    <h5 class="tit-latest-post">Latest Post</h5>
-
+                    <h5 class="tit-latest-post">Bài nổi bật </h5>
+                    <!-- bài noi bật -->
                     <div ng-repeat="post in popularArticles">
-                        <h4>{{post.title}}</h4>
+                        <h5><a href="#detail/{{x._id}}">{{post.title}}</a></h5>
                         <div class="meta-info">
                             <span><a href="" class="author">{{post._author.name}}</a></span>
                             <span><time class="date-updated">{{post.createdDate}}</time></span>
                         </div><br>
                         <hr>
                     </div>
+                </div>
+                <div class="latest-post">
+                    <h5 class="tit-latest-post">Bài mới nhất </h5>
+                    <!-- bai noi bat -->
+                    <div ng-repeat="post in popularArticles">
 
+                        <h5><a href="#detail/{{x._id}}">{{post.title}}</a></h5>
+                        <div class="meta-info">
+                            <span><a href="" class="author">{{post._author.name}}</a></span>
+                            <span><time class="date-updated">{{post.createdDate}}</time></span>
+                        </div><br>
+                        <hr>
+                    </div>
                 </div>
                 <div class="block-instagram">
-                    <h5 class="tit-latest-post">Instagram</h5>
+                    <h5 class="tit-latest-post">FanPage</h5>
                     <div class="row" style="padding:1px 10px;">
                         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 ins-img"><img src="img/small/9-324x235.jpg" style="width:100%;"></div>
                         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 ins-img"><img src="img/small/24-324x235.jpg" style="width:100%;"></div>
@@ -104,15 +159,12 @@
                         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 ins-img"><img src="img/small/24-324x235.jpg" style="width:100%;"></div>
                         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 ins-img"><img src="img/small/9-324x235.jpg" style="width:100%;"></div>
                     </div>
-
                 </div>
-                <div class="block-category">
+                <div>
                     <h5 class="tit-latest-post">Category</h5>
-                    <p>
-                        <ul>
-                            <!-- <li><a ng-repeat="x in categories" href="#">{{x.name}}</a></li> -->
-                        </ul>
-                    </p>
+                    <ul>
+                        <li><a ng-repeat="x in categories" href="#">{{x.name}}</a></li>
+                    </ul>
                 </div>
                 <hr>
             </div>

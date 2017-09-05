@@ -17,124 +17,202 @@
 </head>
 
 <body ng-controller="maincontroller" ng-init="apiGetCat()">
+
     <div class="container-fluid">
-        <div class="td-header-row td-header-top-menu">
-            <div class="w3-col m12">
-                <div>
-                    <h6 class="container">Saturday, August 19, 2017</h6>
+        <nav class="navbar navbar-inverse ">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">WebSiteName</a>
                 </div>
-            </div>
-
-            <div class="td-header-sp-top-widget">
-                <span></span>
-            </div>
-        </div>
-        <div class="container td-header-row td-header-header ">
-            <div class="row ">
-                <div class="col-lg-3 col-md-3 col-sm-3 ">
-                    <h2>BING NEW</h2>
-                    <!-- <img src="img/logo.jpg " style="width:100%; "> -->
-                </div>
-                <div class="col-lg-9 col-md-9 col-sm-9 ">
-
-                </div>
-            </div>
-
-        </div>
-        <nav class="navbar">
-            <div class="container ">
-
-                <!-- <div class="col-sm-4 blog-name ">
-
-                        <h6 class="blog-tit"><a href="#/ " class="blog-name ">HOME</a></h6>
-
-                    </div> -->
-                <ul>
-                    <li><a href="#/ " class="blog-name ">HOME</a></li>
-                    <li><a href="#">About us</a></li>
-                    <li class="dropdown ">
-                        <div href="javascript:void(0) ">
-                            <a class="dropbtn " href="# ">
-                                      Category  <span class="caret "></span></a>
-                            <div class="dropdown-content ">
-                                <a ng-repeat="x in categories " href="#categories/{{x._id}} ">{{x.name}}</a>
-                            </div>
+                <form class="navbar-form navbar-left">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Nhập tìm kiếm">
+                        <div class="input-group-btn">
+                            <button class="btn btn-info" type="submit">
+                                <span class="glyphicon glyphicon-search"></span> Search
+                 
+                            </button>
                         </div>
-                    </li>
-                    <li><a data-toggle="modal" href="#loginModal ">Log In</a></li>
-                    <li><a data-toggle="modal" data-target="#signupModal ">Sign Up</a></li>
-                    <li><a href="admin/admin.html ">Admin</a></li>
-
+                    </div>
+                </form>
+                <ul class="nav navbar-nav">
+                    <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                    <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
                 </ul>
-
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a>Thứ 3, ngày 5-9</a></li>
+                </ul>
             </div>
         </nav>
-        <div class="end-header">.</div>
-
     </div>
+    <div class="container td-header-row td-header-header ">
+        <div class="row ">
+            <div class="col-lg-3 col-md-3 col-sm-3 ">
+                <img src="img/logo03.png " style="width:100%; ">
+            </div>
+            <div class="col-lg-9 col-md-9 col-sm-9 ">
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <nav class="navbar">
+            <ul>
+                <li><a href="#/">HOME</a></li>
+                <li><a href="#">About us</a></li>
+                <li class="dropdown ">
+                    <div href="javascript:void(0) ">
+                        <a class="dropbtn " href="# ">
+                                      Category  <span class="caret "></span></a>
+                        <div class="dropdown-content ">
+                            <a ng-repeat="x in categories " href="#categories/{{x._id}} ">{{x.name}}</a>
+                        </div>
+                    </div>
+                </li>
+                <!--login -->
+                <li><a ng-hide="isLogged()" data-toggle="modal" data-target="#loginModal">Login</a>
+                    <a ng-show="isLogged()" class="dropdown-toggle" data-toggle="dropdown" href="">
+                                            {{user.name}} <span class="caret"></span> 
+                                        </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="admin.html">Admin</a></li>
+                        <li><a ng-click="logOut()" href="">Log Out</a></li>
+                    </ul>
+                </li>
 
-
+                <!-- <li><a data-toggle="modal" href="#loginModal ">Log In</a></li>
+                <li><a data-toggle="modal" data-target="#signupModal ">Sign Up</a></li> -->
+                <li><a href="admin/admin.html ">Admin</a></li>
+            </ul>
+        </nav>
+    </div>
     <div id="main ">
         <!-- angular templating -->
         <!-- this is where content will be injected -->
         <div ng-view></div>
-
     </div>
 
     <div class="container-fluid ">
-        <h4 style="text-align:center; ">FOLLOW ME ON INSTAGRAM @MIA_MIA</h4>
-        <div class="zoom-effect-container ">
-            <div class="image-card ">
-                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 gallery ">
-                    <img src="img/blog02.jpg " style="width:100%; " class="view hm-zoom ">
+        <h4 style="text-align:center; ">FOLLOW US ON INSTAGRAM @NEW_CROP</h4>
+
+    </div>
+
+    <footer class="footer-Section ">
+        <div class="container ">
+            <div class="row ">
+                <div class=" col-sm- col-sm-offset-">
+                    <div class="col-sm-4 ">
+                        <div class="footer-col-item ">
+                            <h3 style="text-align:left; ">New Crop</h3>
+                            <p>Newspaper is your news, entertainment, music fashion website. We provide you with the latest breaking news and videos straight from the entertainment industry.</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="footer-col-item ">
+                            <h5>Sign up for Newsletter</h5>
+                            <form class="signUpNewsletter " action=" " method="get ">
+                                <input name=" " class="gt-email form-control " placeholder="You@youremail.com " type="text " style="color:black; ">
+                                <!-- <input name=" " class="btn-defaul " value="Go " type="button " style="background-color:white; color:black; "> --></form>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="footer-col-item ">
+                            <h5>Sign up for Newsletter</h5>
+                            <form class="signUpNewsletter " action=" " method="get ">
+                                <input name=" " class="gt-email form-control " placeholder="You@youremail.com " type="text " style="color:black; ">
+                                <!-- <input name=" " class="btn-defaul " value="Go " type="button " style="background-color:white; color:black; "> --></form>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 gallery ">
-                    <img src="img/blog01.jpg " style="width:100%; " class="view hm-zoom ">
+            </div>
+            <h6 style="text-align:center;">© Copyright 2017 - New crop: Catching up with the World </h6>
+        </div>
+    </footer>
+    <!-- Modal-->
+    <div class="modal fade" id="registerModal" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Registration Form</h4>
                 </div>
-                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 gallery ">
-                    <img src="img/blog02.jpg " style="width:100%; " class="view hm-zoom ">
-                </div>
-                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 gallery ">
-                    <img src="img/blog01.jpg " style="width:100%; " class="view hm-zoom ">
+                <div class="modal-body">
+                    <form ng-submit="signup() ">
+                        <div class="form-group ">
+                            <label for="firstName " class="control-label ">Full Name</label>
+                            <div class=" ">
+                                <input ng-model="newUser.name " type="text " id="firstName " placeholder="Full Name " class="form-control " autofocus>
+                            </div>
+                        </div>
+
+                        <div class="form-group ">
+                            <label for="email " class="control-label ">Email</label>
+                            <div class=" ">
+                                <input ng-model="newUser.email " id="email" type="email" name="email" class="form-control" placeholder="Email">
+                            </div>
+                        </div>
+
+                        <div class="form-group ">
+                            <label for="pwd " class=" control-label ">Password</label>
+                            <div class=" ">
+                                <input ng-model="newUser.password " type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd">
+                            </div>
+                        </div>
+
+                        <div class="form-group ">
+                            <div class=" ">
+                                <p>*Please comolete all fields correctly.</p>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="signup ">
+                                <button type="submit " class="btn btn-default btn-readmore  login">Đăng kí</button>
+                            </div>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
     </div>
 
-    <footer class="footer-Section ">
-        <div class="footer-top-layout ">
-            <div class="container ">
-                <div class="row ">
-                    <div class=" col-sm-10 col-lg-offset-2 ">
-                        <div class="col-sm-3 ">
-                            <div class="footer-col-item ">
-                                <h3 style="text-align:left; ">Life Is a Journey</h3>
-                                <address>
-                  501,507 your company address<br>
-                  400015 Maharashtra, US
-                  </address>
-                            </div>
-                        </div>
-                        <div class="col-sm-4 ">
-                            <h5>ABOUT US</h5>
-                            <p>Newspaper is your news, entertainment, music fashion website. We provide you with the latest breaking news and videos straight from the entertainment industry.</p>
-                        </div>
-                        <div class="col-sm-3 ">
-                            <div class="footer-col-item ">
-                                <h5>Sign up for Newsletter</h5>
-                                <form class="signUpNewsletter " action=" " method="get ">
-                                    <input name=" " class="gt-email form-control " placeholder="You@youremail.com " type="text " style="color:black; ">
-                                    <!-- <input name=" " class="btn-defaul " value="Go " type="button " style="background-color:white; color:black; "> --></form>
-                            </div>
-                        </div>
-                    </div>
+
+    <div class="modal fade" id="loginModal" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Login Form</h4>
                 </div>
-                <h6>© Copyright 2017 - Newspaper WordPress Theme by TagDiv</h6>
+                <div class="modal-body">
+                    <form ng-submit="login() ">
+                        <div class="form-group ">
+                            <label for="email " class="control-label ">Email</label>
+                            <div class=" ">
+                                <input ng-model="user.email " type="email" name="email" id="email " placeholder="Email " class="form-control ">
+                            </div>
+                        </div>
+
+                        <div class="form-group ">
+                            <label for="pwd " class=" control-label ">Password</label>
+                            <div class=" ">
+                                <input ng-model="user.password " type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="login ">
+                                <button type="submit " class="btn btn-default btn-readmore login">Đăng nhập</button>
+                                <button data-toggle="modal" data-target="#registerModal" class="btn btn-default btn-readmore login" class="close" data-dismiss="modal">Register</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
-    </footer>
-
-    <!--model login   -->
+    </div>
+    <!-- model login   
     <div class="modal fade " id="loginModal " role="dialog ">
         <div class="modal-dialog ">
             <div class="modal-content ">
@@ -164,7 +242,7 @@
             </div>
         </div>
     </div>
-    <!--signupModal  -->
+    signupModal  
     <div class="modal fade " id="signupModal " role="dialog ">
         <div class="modal-dialog ">
             <div class="modal-content ">
@@ -196,7 +274,7 @@
                 <button type="button " class="btn btn-default " data-dismiss="modal ">Close</button>
             </div>
         </div>
-    </div>
+    </div> -->
     </div>
 
 

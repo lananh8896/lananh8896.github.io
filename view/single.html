@@ -45,7 +45,16 @@
                             <h6>Next article</h6>
                             <p><a href="">How to Pick the Perfect House Plant for Positive Energy</a></p>
                         </div>
-
+                        <!-- BAI VIET TIEPtheo -->
+                        <!-- <div ng-repeat="x in articles.slice(((currentPage-1)*itemsPerPage), ((currentPage)*itemsPerPage))" class="row">
+                            <h5><a href="#detail/{{x._id}}">{{x.title}}</a></h5>
+                             <div class="meta-info">
+                                <span><a href="" class="">Tác giả: </a></span>
+                                <span><a href="" class="author">{{x._author.name}}</a></span><br>
+                                <span><time class="date-updated">{{x.createdDate}}</time></span>
+                            </div><br> 
+                            <p>{{x.description}}</p>   
+                        </div> -->
                         <div>
                             <h2>Add a Comment</h2>
                             <form ng-submit="submitCreateCategory()" method="POST" role="form" class="my-form fix-hack">
@@ -53,14 +62,10 @@
                                 <input type="text" val="" ng-model="newCategory.name" class="input-title form-control" placeholder="Nhập Email">
                                 <label class="title_input"><h4>Comment</h4></label>
                                 <textarea class="form-control" val="" ng-model="newCategory.description" class="my-form-area cat-input" rows="5" placeholder="Comment">
-
                                     </textarea><br>
-
-
                                 <button type="submit" class="btn btn-success right clearfix clear ">Publish</button>
                             </form>
                         </div>
-
                         <!-- code comment chi men -->
                         <!-- <div class="input">
                                 <p>Add a Comment</p>
@@ -81,36 +86,24 @@
                             </div> -->
                     </div>
 
-                    <div class="row most-popular-post">
+                    <div class="popular-post">
                         <h3>Most Popular Post</h3>
                         <div class="row">
-                            <div clas="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                <div ng-repeat="post in randomArticles" class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                                    <img class="m-thumbnail" ng-src="{{post.media}}">
-                                    <h6>{{getCategoryNameOfArticle(x._category)}}</h6>
-                                    <h5>{{post.title}}</h5>
-                                </div>
+                            <div ng-repeat="post in randomArticles" class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                <img class="m-thumbnail" ng-src="{{post.media}}">
+                                <h6>{{getCategoryNameOfArticle(x._category)}}</h6>
+                                <h5>{{post.title}}</h5>
                             </div>
+                            <!-- <div class="button col-lg-4 col-md-4 col-sm-4 ">
+                                <button class="button button2">Trước</button>
+                                <button class="button button2">Tiếp</button>
+                            </div> -->
                         </div>
-
-
                     </div>
 
-                    <div class="button" style="float:center;">
-                        <!-- <button class="snip1562"><<</button>
-                                <button class="snip1562">>></button> -->
-                        <button class="button button2">Trước</button>
-                        <button class="button button2">Tiếp</button>
-                        <hr>
-                    </div>
                 </div>
 
                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 side-bar">
-                    <div class="aboutme">
-                        <img src="img/me.jpg" class="img-circle" //border-radius// alt="Cinque Terre" width="250" height="250" style="margin:10px;padding:10px;">
-                        <h3>Anh Nguyen</h3>
-                        <p style="padding:10%;">I’m Alice Barkley. I love writing articles about all your favorite celebrities! Please contact me if you want to suggest something or just to say Hi!</p>
-                    </div>
                     <div class="td-social-button">
                         <div class="row">
                             <div class="col-lg-3 col-md-3 col-sm-3">
@@ -125,10 +118,8 @@
                             </div>
                         </div>
                     </div>
-
                     <div class="latest-post">
-                        <h5 class="tit-latest-post">Latest Post</h5>
-
+                        <h5 class="tit-latest-post">Bài nổi bật </h5>
                         <div ng-repeat="post in popularArticles">
                             <h4>{{post.title}}</h4>
                             <div class="meta-info">
@@ -137,11 +128,20 @@
                             </div><br>
                             <hr>
                         </div>
-
                     </div>
-
+                    <div class="latest-post">
+                        <h5 class="tit-latest-post">Bài mới nhất </h5>
+                        <div ng-repeat="post in popularArticles">
+                            <h4>{{post.title}}</h4>
+                            <div class="meta-info">
+                                <span><a href="" class="author">{{post._author.name}}</a></span>
+                                <span><time class="date-updated">{{post.createdDate}}</time></span>
+                            </div><br>
+                            <hr>
+                        </div>
+                    </div>
                     <div class="block-instagram">
-                        <h5 class="tit-latest-post">Instagram</h5>
+                        <h5 class="tit-latest-post">FanPage</h5>
                         <div class="row" style="padding:1px 10px;">
                             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 ins-img"><img src="img/small/9-324x235.jpg" style="width:100%;"></div>
                             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 ins-img"><img src="img/small/24-324x235.jpg" style="width:100%;"></div>
@@ -158,16 +158,14 @@
                             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 ins-img"><img src="img/small/9-324x235.jpg" style="width:100%;"></div>
                         </div>
                     </div>
-                    <div class="block-category">
+                    <div>
                         <h5 class="tit-latest-post">Category</h5>
-                        <p>
-                            <ul>
-                            </ul>
-                        </p>
+                        <ul>
+                            <li><a ng-repeat="x in categories" href="#">{{x.name}}</a></li>
+                        </ul>
                     </div>
+                    <hr>
                 </div>
-
-
             </div>
         </div>
     </div>
