@@ -1,19 +1,27 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="myApp">
 <title>W3.CSS</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<link href="styles/css-admin.css">
 
-<body ng-app="scotchApp" ng-controller="maincontroller">
+
+<link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="/bower_components/ng-tags-input/ng-tags-input.min.css">
+<link rel="stylesheet" href="/bower_components/ng-tags-input/ng-tags-input.bootstrap.min.css">
+<link rel='stylesheet' href='/bower_components/textAngular/dist/textAngular.css'>
+<link rel='stylesheet' href='/bower_components/font-awesome/css/font-awesome.min.css'>
+
+
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link href="../styles/css-admin.css">
+
+<body ng-controller="maincontroller">
 
     <div class="w3-sidebar w3-bar-block w3-card-2 w3-animate-left side-bar" style="display:none;background-color:#009688;" id="mySidebar">
         <button class="w3-bar-item w3-button w3-large" onclick="w3_close()">Close &times;</button>
 
         <h3>Wellcome admin</h3>
         <img src="img/me.jpg" class="img-circle" //border-radius// alt="Cinque Terre" width="100" height="100" style="margin:10px;padding:10px;">
-        <a href="index.html" class="w3-bar-item w3-button">Trang chủ</a>
+        <a href="/index.html" class="w3-bar-item w3-button">Trang chủ</a>
         <a href="admin.html" class="w3-bar-item w3-button">Admin- quản lý bài viết </a>
         <a href="new-post.html" class="w3-bar-item w3-button">Đăng bài mới</a>
         <a href="categories.html" class="w3-bar-item w3-button">Chuyện mục</a>
@@ -54,7 +62,7 @@
                             <td>{{cat.description}}</td>
                             <td>{{cat.create_date}}</td>
                             <td>10</td>
-                            <td><button class="btn-defaul"><a href="#">Sửa</a></button><button class="btn-defaul"><a href="#">Xóa</a></button></td>
+                            <td><button class="btn btn-info"><a href="#">Sửa</a></button><button class="btn btn-info"><a href="#">Xóa</a></button></td>
                         </tr>
 
 
@@ -95,13 +103,22 @@
 
 </body>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
-<script src="/js/app-admin.js"></script>
 
 
+
+<script src="/bower_components/jquery/dist/jquery.min.js "></script>
+<script src="/bower_components/bootstrap/dist/js/bootstrap.min.js "></script>
+<script src="/bower_components/angular/angular.min.js "></script>
+<script src="/bower_components/angular-route/angular-route.min.js "></script>
+<script src="/bower_components/ng-tags-input/ng-tags-input.min.js "></script>
+<script src='/bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js'></script>
+
+<script src='/bower_components/textAngular/dist/textAngular-rangy.min.js'></script>
+<script src='/bower_components/textAngular/dist/textAngular-sanitize.min.js'></script>
+<script src='/bower_components/textAngular/dist/textAngular.min.js'></script>
+
+<script src="../scripts/admin.js"></script>
+
+<script src="../scripts/app.js "></script>
 
 </html>

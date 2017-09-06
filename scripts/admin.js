@@ -47,8 +47,6 @@ app.controller('maincontroller', function($scope, $http) {
 
 
 
-
-
     $scope.getArticleID = function(id) {
         angular.forEach($scope.articles, function(value, key) {
             if (value._id === id) {
@@ -110,11 +108,6 @@ app.controller('maincontroller', function($scope, $http) {
                 // console.log(data, status, headers, config);
             });
     }
-
-
-
-
-
 
 
 

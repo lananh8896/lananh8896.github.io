@@ -1,333 +1,107 @@
-<div class="container" style="padding-top:20px;" ng-init="apiGetArt()">
+<div class="container" style="padding-top:20px;">
     <div ng-init="getArticle()" class="container">
         <div class="row">
-            <div class="col-lg-12 col-md-12 col-ms-12 col-xs-12"><br><br>
-                <!-- <h1 style="text-align:center;"></h1> -->
-                <div class="blog-header">
-                    <div class="col-lg-8 col-md-8 col-ms-8">
-                        <h2>{{article.title}}</h2>
-                        <h6>OCTOBER 12, 2016</h6>
-                        <img ng-src="{{article.media}}" style="width:100%;"> <br> <br>
-                        <p>Find people with high expectations and a low tolerance for excuses. They’ll have higher expectations for you than you have for yourself. Don’t flatter yourself that this has much to do with you – this is just who they are. Don’t
-                            look for “nice” in these relationships. Look for trust.</p>
-                        <blockquote>
-                            <p>"BE FEARLESS IN FRONT OF THEM WITH YOUR IDEAS AS MANY TIMES AS THEY’LL LET YOU"
-                            </p>
-                        </blockquote>
-                        <p>I actually first read this as alkalizing meaning effecting pH level, and I was like, OK I guess I understand how that could positively effect your body, but alchemizing means turning elements to gold basically through magic. That
-                            lead me to research each ingredient because I know alchemy is not actually happening in my body when I eat this, since alchemy is not real. That’s all I’ve got & it’s nothing new. But my gratitude and holiday weekend survival
-                            tactics kept bringing me back to these people – so thankful for them in all areas of my life, and our history & future together.
-                        </p>
-                        <p>I actually first read this as alkalizing meaning effecting pH level, and I was like, OK I guess I understand how that could positively effect your body, but alchemizing means turning elements to gold basically through magic. That
-                            lead me to research each ingredient because I know alchemy is not actually happening in my body when I eat this, since alchemy is not real. That’s all I’ve got & it’s nothing new. But my gratitude and holiday weekend survival
-                            tactics kept bringing me back to these people – so thankful for them in all areas of my life, and our history & future together.
-                        </p>
-                        <p>I actually first read this as alkalizing meaning effecting pH level, and I was like, OK I guess I understand how that could positively effect your body, but alchemizing means turning elements to gold basically through magic. That
-                            lead me to research each ingredient because I know alchemy is not actually happening in my body when I eat this, since alchemy is not real. That’s all I’ve got & it’s nothing new. But my gratitude and holiday weekend survival
-                            tactics kept bringing me back to these people – so thankful for them in all areas of my life, and our history & future together.
-                        </p><img src="img/p1.jpg" style="width:100%;"> <br> <br>
-                        <p>Find people with high expectations and a low tolerance for excuses. They’ll have higher expectations for you than you have for yourself. Don’t flatter yourself that this has much to do with you – this is just who they are. Don’t
-                            look for “nice” in these relationships. Look for trust.</p>
-                        <blockquote>
-                            <p>"BE FEARLESS IN FRONT OF THEM WITH YOUR IDEAS AS MANY TIMES AS THEY’LL LET YOU"
-                            </p>
-                        </blockquote>
-                        <p>I actually first read this as alkalizing meaning effecting pH level, and I was like, OK I guess I understand how that could positively effect your body, but alchemizing means turning elements to gold basically through magic. That
-                            lead me to research each ingredient because I know alchemy is not actually happening in my body when I eat this, since alchemy is not real. That’s all I’ve got & it’s nothing new. But my gratitude and holiday weekend survival
-                            tactics kept bringing me back to these people – so thankful for them in all areas of my life, and our history & future together.
-                        </p>
-                        </p><img src="img/b1.jpg" style="width:100%;"> <br> <br>
-                        <p>Find people with high expectations and a low tolerance for excuses. They’ll have higher expectations for you than you have for yourself. Don’t flatter yourself that this has much to do with you – this is just who they are. Don’t
-                            look for “nice” in these relationships. Look for trust.</p>
-
-                        <p>I actually first read this as alkalizing meaning effecting pH level, and I was like, OK I guess I understand how that could positively effect your body, but alchemizing means turning elements to gold basically through magic. That
-                            lead me to research each ingredient because I know alchemy is not actually happening in my body when I eat this, since alchemy is not real. That’s all I’ve got & it’s nothing new. But my gratitude and holiday weekend survival
-                            tactics kept bringing me back to these people – so thankful for them in all areas of my life, and our history & future together.
-                            <h3 style="text-align:right;font-style: italic;">Mia</h3>
-
-
-                        </p><br><br>
-                        <div class="share-post">
-                            <div class="row">
-                                <div class="col-lg-2 col-md-2 col-sm-2">
-                                    <span class="share-post-tit">SHARE</span>
-                                </div>
-                                <div class="td-social-button">
-                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                        <a href=""> <img src="img/fb-icon.png" style="width:100%;"></a>
-                                    </div>
-                                    <div class="col-lg-2 col-md-2 col-sm-2  col-xs-2">
-                                        <a href=""> <img src="img/fb-icon.png" style="width:100%;"></a>
-                                    </div>
-                                    <div class="col-lg-2 col-md-2 col-sm-2  col-xs-2">
-                                        <a href=""> <img src="img/fb-icon.png" style="width:100%;"></a>
-                                    </div>
-                                    <div class="col-lg-2 col-md-2 col-sm-2  col-xs-2">
-                                        <a href=""> <img src="img/fb-icon.png" style="width:100%;"></a>
-                                    </div>
-                                </div>
-                            </div>
+            <!-- <h1 style="text-align:center;"></h1> -->
+            <div>
+                <div class="col-lg-8 col-md-8 col-ms-8">
+                    <div class="full-artical">
+                        <div class="title ">
+                            <h1> <a href="#detail/{{article._id}} ">{{article.title}}</a></h1>
                         </div>
+                        <div class="post-date date-single">
+                            <a href="#author/{{articlesInCategory._author._id}}"> {{article._author.name}}</a> <a href="">{{getCategoryNameOfArticle(article._category._id)}}</a> | <a href=""> {{article.createdDate | date: 'dd-MM-yyyy HH:mm:ss'}}</a>
+                        </div>
+                        <!-- <div class="m-thumbnail">
+                            <a href="#detail/{{x._id}}"><img class="portrait" ng-src="{{x.media}}" style="width:100%;"></a>
+                        </div> -->
                         <br>
-                        <hr>
-                        <div class="row">
-                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 previous article" style="text-align:left;">
-                                <h6>Previous article</h6>
-                                <p><a href="">A Complete Guide to Finding the Best Spa in the World</a></p>
-                            </div>
-                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 next article" style="text-align:right;">
-                                <h6>Next article</h6>
-                                <p><a href="">How to Pick the Perfect House Plant for Positive Energy</a></p>
-                            </div>
+                    </div>
+                    <div class="thumbnail-cat">
+                        <a href="#single/{{article._id}} ">
+                            <img ng-src="{{article.media}}" class="portrait-cat" alt="Image" />
+                        </a>
+                    </div>
+                    <br>
+                    <div class="full-description">
+
+                        <div ng-bind-html="article.content" class="blog-content"> </div>
+                    </div>
+                    <hr>
+                    <hr>
+                    <hr>
+                    <div>
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 previous article" style="text-align:left;">
+                            <h6>Previous article</h6>
+                            <p><a href="">A Complete Guide to Finding the Best Spa in the World</a></p>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 next article" style="text-align:right;">
+                            <h6>Next article</h6>
+                            <p><a href="">How to Pick the Perfect House Plant for Positive Energy</a></p>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row related articles">
+                        <h3>RELATED ARTICLES</h3>
+
+                        <div class="col-lg-4 col-md-4 col-ms-4">
+                            <img src="img/p3.jpg" style="width:100%;">
+                            <h6>Style</h6>
+                            <a href="">Tighten Your Butt and Upper Body in Just 4 Moves</a>
                         </div>
 
-                        <div class="row related articles">
-                            <h3>RELATED ARTICLES</h3>
-                            <div class="row">
-                                <div clas="col-lg-12 col-md-12 col-ms-12 col-xs-12">
-                                    <div class="col-lg-4 col-md-4 col-ms-4">
-                                        <img src="img/p3.jpg" style="width:100%;">
-                                        <h6>Style</h6>
-                                        <a href="">Tighten Your Butt and Upper Body in Just 4 Moves</a>
-                                    </div>
-
-                                    <div class="col-lg-4 col-md-4 col-ms-4">
-                                        <img src="img/p3.jpg" style="width:100%;">
-                                        <h6>Style</h6>
-                                        <a href="">Tighten Your Butt and Upper Body in Just 4 Moves</a>
-                                    </div>
-                                    <div class="col-lg-4 col-md-4 col-ms-4">
-                                        <img src="img/p3.jpg" style="width:100%;">
-                                        <h6>Style</h6>
-                                        <a href="">Tighten Your Butt and Upper Body in Just 4 Moves</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="button" style="text-align:center;">
-                                <button class="snip1562"><<</button>
-                                <button class="snip1562">>></button>
-                                <hr>
-                            </div>
+                        <div class="col-lg-4 col-md-4 col-ms-4">
+                            <img src="img/p3.jpg" style="width:100%;">
+                            <h6>Style</h6>
+                            <a href="">Tighten Your Butt and Upper Body in Just 4 Moves</a>
                         </div>
-                        <div>
-                            <h3 style="text-align:left;">Leave a comment:</h3>
-                            <form class="block-comment">
-                                <textarea placeholder="comment" cols="45" row="20" class="Comment"> </textarea><br><br>
-                                <input type="text" placeholder="Name"><br><br>
-                                <input type="text" placeholder="Email"><br>
-                                <button class="snip1562">Submit</button>
-                                <hr>
-
-
-                            </form>
-
+                        <div class="col-lg-4 col-md-4 col-ms-4">
+                            <img src="img/p3.jpg" style="width:100%;">
+                            <h6>Style</h6>
+                            <a href="">Tighten Your Butt and Upper Body in Just 4 Moves</a>
                         </div>
 
-
-
-
+                    </div>
+                    <div>
+                        <h3 style="text-align:left;">Leave a comment:</h3>
+                        <form class="block-comment">
+                            <textarea placeholder="comment" cols="45" row="20" class="Comment"> </textarea><br><br>
+                            <input type="text" placeholder="Name"><br><br>
+                            <input type="text" placeholder="Email"><br>
+                            <button class="snip1562">Submit</button>
+                            <hr>
+                        </form>
 
                     </div>
 
-                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 side-bar">
-                        <div class="aboutme">
-                            <img src="img/me.jpg" class="img-circle" //border-radius// alt="Cinque Terre" width="250" height="250" style="margin:10px;padding:10px;">
-                            <h3>Anh Nguyen</h3>
-                            <p style="padding:10%;">I’m Alice Barkley. I love writing articles about all your favorite celebrities! Please contact me if you want to suggest something or just to say Hi!</p>
-                        </div>
-                        <div class="td-social-button">
-                            <div class="row">
-                                <div class="col-lg-3 col-md-3 col-sm-3">
-                                    <i class="fa fa-pinterest-p" aria-hidden="true"></i>
-                                </div>
-                                <div class="col-lg-3 col-md-3 col-sm-3">
-                                    <i class="fa fa-tumblr" aria-hidden="true"></i></div>
-                                <div class="col-lg-3 col-md-3 col-sm-3">
-                                    <i class="fa fa-twitter" aria-hidden="true"></i></div>
-                                <div class="col-lg-3 col-md-3 col-sm-3">
-                                    <i class="fa fa-facebook-official" aria-hidden="true"></i>
-                                </div>
-                            </div>
-                        </div>
+                </div>
 
-                        <div class="latest-post">
-                            <h5 class="tit-latest-post">Latest Post</h5>
-                            <div class="row">
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                    <img src="img/small/5-324x235.jpg" style="width:100%;">
-                                </div>
-                                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
-                                    <h5 class="tit-artical-sidebar"><a href="">1.7 Soaps to Supercharge Your Daily Skincare Routine</a></h5>
-                                    <div class="meta-info">
-                                        <span class="post-category">Make up</span>
-                                        <span class="date-updated"><time class="date-updated">OCTOBER 12, 2016</time></span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                    <img src="img/small/5-324x235.jpg" style="width:100%;">
-                                </div>
-                                <div class="col-lg-8 col-md-8 col-ms-8 col-xs-8">
-                                    <h5 class="tit-artical-sidebar"><a href="">2.7 Soaps to Supercharge Your Daily Skincare Routine</a></h5>
-                                    <div class="meta-info">
-                                        <span class="post-category">Make up</span>
-                                        <span class="date-updated"><time class="date-updated">OCTOBER 12, 2016</time></span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                    <img src="img/small/5-324x235.jpg" style="width:100%;">
-                                </div>
-                                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
-                                    <h5 class="tit-artical-sidebar"><a href="">3.7 Soaps to Supercharge Your Daily Skincare Routine</a></h5>
-                                    <div class="meta-info">
-                                        <span class="post-category">Make up</span>
-                                        <span class="date-updated"><time class="date-updated">OCTOBER 12, 2016</time></span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                    <img src="img/small/5-324x235.jpg" style="width:100%;">
-                                </div>
-                                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
-                                    <h5 class="tit-artical-sidebar"><a href="">4.7 Soaps to Supercharge Your Daily Skincare Routine</a></h5>
-                                    <div class="meta-info">
-                                        <span class="post-category">Make up</span>
-                                        <span class="date-updated"><time class="date-updated">OCTOBER 12, 2016</time></span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                    <img src="img/small/5-324x235.jpg" style="width:100%;">
-                                </div>
-                                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
-                                    <h5 class="tit-artical-sidebar"><a href="">5.7 Soaps to Supercharge Your Daily Skincare Routine</a></h5>
-                                    <div class="meta-info">
-                                        <span class="post-category">Make up</span>
-                                        <span class="date-updated"><time class="date-updated">OCTOBER 12, 2016</time></span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                    <img src="img/small/5-324x235.jpg" style="width:100%;">
-                                </div>
-                                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
-                                    <h5 class="tit-artical-sidebar"><a href="">6.7 Soaps to Supercharge Your Daily Skincare Routine</a></h5>
-                                    <div class="meta-info">
-                                        <span class="post-category">Make up</span>
-                                        <span class="date-updated"><time class="date-updated">OCTOBER 12, 2016</time></span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="block-instagram">
-                            <h5 class="tit-latest-post">Instagram</h5>
-                            <div class="row" style="padding:1px 10px;">
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 ins-img"><img src="img/small/9-324x235.jpg" style="width:100%;"></div>
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 ins-img"><img src="img/small/18-324x235.jpg" style="width:100%;"></div>
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 ins-img"><img src="img/small/24-324x235.jpg" style="width:100%;"></div>
-                            </div>
-                            <div class="row" style="padding:1px 10px;">
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 ins-img"><img src="img/small/7-324x235.jpg" style="width:100%;"></div>
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 ins-img"><img src="img/small/8-324x235.jpg" style="width:100%;"></div>
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 ins-img"><img src="img/small/20-324x235.jpg" style="width:100%;"></div>
-                            </div>
-                            <div class="row" style="padding:1px 10px;">
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 ins-img"><img src="img/small/9-324x235.jpg" style="width:100%;"></div>
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 ins-img"><img src="img/small/18-324x235.jpg" style="width:100%;"></div>
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 ins-img"><img src="img/small/24-324x235.jpg" style="width:100%;"></div>
-                            </div>
-                        </div>
-                        <div class="block-category">
-                            <h5 class="tit-latest-post">Category</h5>
-                            <p>
-                                <ul>
-                                    <li><a href="" class="block-category">Travle<span class="catogory-num">5</span> </a> </li>
-                                    <li><a href="" class="block-category">Film & Book<span class="catogory-num">5</span> </a> </li>
-                                    <li><a href="" class="block-category">Blog<span class="catogory-num">5</span> </a> </li>
-                                    <li><a href="" class="block-category">Falun Dafa<span class="catogory-num">5</span> </a> </li>
-                                    <br>
-                                    <li><a href="" class="block-category">Travle<span class="catogory-num">5</span> </a> </li>
-                                    <li><a href="" class="block-category">Film & Book<span class="catogory-num">5</span> </a> </li>
-                                    <li><a href="" class="block-category">Blog<span class="catogory-num">5</span> </a> </li>
-                                    <li><a href="" class="block-category">Falun Dafa<span class="catogory-num">5</span> </a> </li>
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 side-bar">
 
-                                </ul>
-                            </p>
-                        </div>
+
+                    <div class="latest-post">
+                        <h5 class="tit-latest-post">Latest Post</h5>
+
                     </div>
+                    <div class="block-instagram">
+                        <h5 class="tit-latest-post">Instagram</h5>
+                        <div class="row" style="padding:1px 10px;">
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 ins-img"><img src="img/small/9-324x235.jpg" style="width:100%;"></div>
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 ins-img"><img src="img/small/9-324x235.jpg" style="width:100%;"></div>
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 ins-img"><img src="img/small/9-324x235.jpg" style="width:100%;"></div>
+                        </div>
 
+                    </div>
+                    <div class="block-category">
+                        <h5 class="tit-latest-post">Category</h5>
+                        <p>
+                            <ul>
+
+                            </ul>
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-
-<!-- <div class="container">
-        <div class="row">
-
-        <div class="col-lg-12 col-md-12 col-ms-12 col-xs-12">
-          <div class="col-lg-7 col-md-7 col-ms-7 col-xs-7" style="padding-left:120px;">
-           
-            <h2>"Cứ mơ và cứ đi!": Ấn phẩm du lịch đẹp - đã - đủ nhất mùa hè này mà bạn nhất quyết không thể bỏ lỡ!</h2>
-            <h6><em>Không chỉ đơn giản là một cuốn sách du lịch, "Cứ mơ và cứ đi" hứa hẹn sẽ còn là người bạn đồng hành cùng với tất cả những tín đồ dịch chuyển trong mùa hè 2017 năm nay!</em></h6>
-            <p>Nhắc đến mùa hè bạn sẽ nghĩ ngay đến điều gì?
-                 Những phút giây thư giãn nằm dài bên bờ biển nghe sóng vỗ rì rào, khoảnh khắc chinh phục những vùng đất mới toanh hay cảm giác háo hức mỗi khi đặt chân đến một đất nước xa lạ nơi không ai biết bạn là ai? Dù là thế nào đi chăng nữa thì du lịch cũng đã trở thành một phần không thể thiếu được mỗi khi chúng ta nhắc đến những ngày hè. Thế giới rộng lớn thế kia, nằm nhà làm gì cho lãng phí cả tuổi thanh xuân!
-              <br><br>
-              <img src="img/blog07.jpg" style="width:100%"><br><br>
-
-            Với hành trình dịch chuyển năm nay, chúng tôi rất vui mừng khi được giới thiệu đến bạn một người bạn đồng hành cực chất. Đó chính là ấn phẩm mang tên "Here We Go - Cứ mơ và cứ đi!". Đây chính là cuốn sách về du lịch trải nghiệm đầu tiên nằm trong Tủ sách Kenh14.vn kết hợp cùng Đinh Tị Books phát hành. </p>
-            <p>Nhắc đến mùa hè bạn sẽ nghĩ ngay đến điều gì? Những phút giây thư giãn nằm dài bên bờ biển nghe sóng vỗ rì rào, khoảnh khắc chinh phục những vùng đất mới toanh hay cảm giác háo hức mỗi khi đặt chân đến một đất nước xa lạ nơi không ai biết bạn là ai? Dù là thế nào đi chăng nữa thì du lịch cũng đã trở thành một phần không thể thiếu được mỗi khi chúng ta nhắc đến những ngày hè. Thế giới rộng lớn thế kia, nằm nhà làm gì cho lãng phí cả tuổi thanh xuân!
-
-            Với hành trình dịch chuyển năm nay, chúng tôi rất vui mừng khi được giới thiệu đến bạn một người bạn đồng hành cực chất. Đó chính là ấn phẩm mang tên "Here We Go - Cứ mơ và cứ đi!". Đây chính là cuốn sách về du lịch trải nghiệm đầu tiên nằm trong Tủ sách Kenh14.vn kết hợp cùng Đinh Tị Books phát hành. </p>  
-            <br>  
-            <img src="img/blog02.jpg" style="width:100%">  <br><br>
-            <p>Nhắc đến mùa hè bạn sẽ nghĩ ngay đến điều gì? Những phút giây thư giãn nằm dài bên bờ biển nghe sóng vỗ rì rào, khoảnh khắc chinh phục những vùng đất mới toanh hay cảm giác háo hức mỗi khi đặt chân đến một đất nước xa lạ nơi không ai biết bạn là ai? Dù là thế nào đi chăng nữa thì du lịch cũng đã trở thành một phần không thể thiếu được mỗi khi chúng ta nhắc đến những ngày hè. Thế giới rộng lớn thế kia, nằm nhà làm gì cho lãng phí cả tuổi thanh xuân!
-
-            Với hành trình dịch chuyển năm nay, chúng tôi rất vui mừng khi được giới thiệu đến bạn một người bạn đồng hành cực chất. Đó chính là ấn phẩm mang tên "Here We Go - Cứ mơ và cứ đi!". Đây chính là cuốn sách về du lịch trải nghiệm đầu tiên nằm trong Tủ sách Kenh14.vn kết hợp cùng Đinh Tị Books phát hành. </p>
-            <p>Nhắc đến mùa hè bạn sẽ nghĩ ngay đến điều gì? Những phút giây thư giãn nằm dài bên bờ biển nghe sóng vỗ rì rào, khoảnh khắc chinh phục những vùng đất mới toanh hay cảm giác háo hức mỗi khi đặt chân đến một đất nước xa lạ nơi không ai biết bạn là ai? Dù là thế nào đi chăng nữa thì du lịch cũng đã trở thành một phần không thể thiếu được mỗi khi chúng ta nhắc đến những ngày hè. Thế giới rộng lớn thế kia, nằm nhà làm gì cho lãng phí cả tuổi thanh xuân!<br>
-             <br> <img src="img/blog06.jpg" style="width:100%"> <br><br>
-
-            Với hành trình dịch chuyển năm nay, chúng tôi rất vui mừng khi được giới thiệu đến bạn một người bạn đồng hành cực chất. Đó chính là ấn phẩm mang tên "Here We Go - Cứ mơ và cứ đi!". Đây chính là cuốn sách về du lịch trải nghiệm đầu tiên nằm trong Tủ sách Kenh14.vn kết hợp cùng Đinh Tị Books phát hành. </p>    
-            
-
-            <p style="text-align:right;">Nguồn: Sưu tầm</p>                                     
-            <p style="text-align:right;" >Hình ảnh: Photographer</p>        
-          </div>
-          <div  class="col-lg-4 col-md-4 col-ms-4 col-xs-4" style="padding:20px 40px;float:right;">
-            <h3>Các bài viết gần đây</h3>
-            <div class="row">
-              <div class="col-lg-4 col-md-4 col-ms-4 col-xs-4">
-                  <img src="img/blog3.jpg" style="width:100%;">
-              </div>
-              <div class="col-lg-8 col-md-8 col-ms-8 col-xs-8">
-              <h5><a href="">Phong cách nội thất 2017- Tối giản</a></h5>
-              <p>"Minimalism" được định nghĩa là sự đơn giản trong thiết kế. Còn được mệnh danh là phong cách "không bao giờ lỗi mốt" ...</p>
-            </div>
-            </div><hr>
-            <div class="row">
-              <div class="col-lg-4 col-md-4 col-ms-4 col-xs-4">
-                  <img src="img/blog3.jpg" style="width:100%;"></div>
-              <div class="col-lg-8 col-md-8 col-ms-8 col-xs-8">
-              <h5><a href="">Phong cách nội thất 2017- Tối giản</a></h5>
-
-              <p>"Minimalism" được định nghĩa là sự đơn giản trong thiết kế. Còn được mệnh danh là phong cách "không bao giờ lỗi mốt" ...</p>
-            </div>
-            </div><hr>
-            <div class="row">
-              <div class="col-lg-4 col-md-4 col-ms-4 col-xs-4">
-                  <img src="img/blog3.jpg" style="width:100%;"></div>
-              <div class="col-lg-8 col-md-8 col-ms-8 col-xs-8">
-              <h5><a href="">Phong cách nội thất 2017- Tối giản</a></h5>
-              <p>"Minimalism" được định nghĩa là sự đơn giản trong thiết kế. Còn được mệnh danh là phong cách "không bao giờ lỗi mốt" ...</p>
-            </div>
-            </div><hr>
-          </div>
-        </div>
-      </div>
-    </div> -->
+</div>
