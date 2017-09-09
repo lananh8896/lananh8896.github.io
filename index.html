@@ -16,13 +16,13 @@
 
 </head>
 
-<body ng-controller="maincontroller" ng-init="init()">
+<body ng-controller="maincontroller" ng-init="init()" class="index">
 
     <div class="container-fluid">
         <nav class="navbar navbar-inverse ">
             <div class="container">
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="#">WebSiteName</a>
+                    <a class="navbar-brand" href="#">New Crop</a>
                 </div>
                 <form class="navbar-form navbar-left">
                     <div class="input-group">
@@ -40,7 +40,7 @@
                     <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a>Thứ 3, ngày 5-9</a></li>
+                    <li><a>Thứ 7, ngày 9-9</a></li>
                 </ul>
             </div>
         </nav>
@@ -54,35 +54,40 @@
             </div>
         </div>
     </div>
-    <div class="container">
-        <nav class="navbar">
-            <ul>
+
+    <nav class="navbar nav-light menu ">
+        <div class="container">
+            <ul class="">
                 <li><a href="#/">HOME</a></li>
                 <li><a href="#">About us</a></li>
                 <li class="dropdown ">
                     <div href="javascript:void(0) ">
                         <a class="dropbtn " href="# ">
                                       Category  <span class="caret "></span></a>
-                        <div class="dropdown-content ">
+                        <div class="dropdown-content">
                             <a ng-repeat="x in categories " href="#categories/{{x._id}} ">{{x.name}}</a>
+
                         </div>
                     </div>
                 </li>
                 <!--login -->
+
                 <li><a ng-hide="isLogged()" data-toggle="modal" data-target="#loginModal">Login</a>
                     <a ng-show="isLogged()" class="dropdown-toggle" data-toggle="dropdown" href="">
                                             {{user.name}} <span class="caret"></span> 
                                         </a>
-                    <!-- <ul class="dropdown-menu">
+                    <ul class="dropdown-menu">
                         <li><a href="admin.html">Admin</a></li>
                         <li><a ng-click="logOut()" href="">Log Out</a></li>
-                    </ul> -->
+                    </ul>
                 </li>
+
 
                 <li><a href="admin/admin.html ">Admin</a></li>
             </ul>
-        </nav>
-    </div>
+        </div>
+    </nav>
+
     <div id="main ">
         <!-- angular templating -->
         <!-- this is where content will be injected -->
@@ -91,10 +96,10 @@
         </div>
     </div>
 
-    <div class="container-fluid ">
+    <!-- <div class="container-fluid ">
         <h4 style="text-align:center; ">FOLLOW US ON INSTAGRAM @NEW_CROP</h4>
 
-    </div>
+    </div> -->
 
     <footer class="footer-Section ">
         <div class="container ">
@@ -218,13 +223,13 @@
 
 </body>
 
-
 <script src="/bower_components/jquery/dist/jquery.min.js "></script>
 <script src="/bower_components/bootstrap/dist/js/bootstrap.min.js "></script>
 <script src="/bower_components/angular/angular.min.js "></script>
 <script src="/bower_components/angular-route/angular-route.min.js "></script>
 <script src="/bower_components/ng-tags-input/ng-tags-input.min.js "></script>
 <script src='/bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js'></script>
+<script src="/bower_components/angular-cookies/angular-cookies.min.js"></script>
 
 <script src='/bower_components/textAngular/dist/textAngular-rangy.min.js'></script>
 <script src='/bower_components/textAngular/dist/textAngular-sanitize.min.js'></script>

@@ -60,23 +60,94 @@
                     </thead>
                     <tbody>
                         <tr ng-repeat="art in articles">
-                            <td>1</td>
+                            <td>01</td>
                             <td>{{art.title}}</td>
                             <td>{{art._author.name}}</td>
                             <td>{{art.createdDate}}</td>
                             <td>{{art.updatedDate}}</td>
-                            <td><button class="btn btn-info">sửa</button><button class="btn btn-info">xóa</button></td>
+                            <td><button class="btn btn-info"><a  ng-click="getArticleID(x._id)" data-toggle="modal" href='#edit-modal'>Edit</a></button>
+                                <td><button class="btn btn-info"><a data-toggle="modal" href='#delete-modal' ng-click="getArticleID(x._id)">Delete</a></button></p>
                         </tr>
-
-
                     </tbody>
                 </table>
             </div>
         </div>
+    </div>
+    <div class="modal fade" id="modal-id">
+        <div class="modal-dialog ">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title text-center">Are you sure ?</h4>
+                </div>
+                <div class="modal-body">
+                    <button type="button" class="btn btn-primary right modal-btn" data-dismiss="modal">No</button>
+                    <button type="button" class="btn btn-default right modal-btn">Yes</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
 
+    <div class="modal fade" id='delete-modal'>
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title text-center">Are you sure?</h4>
+                </div>
+                <div class="modal-footer">
+                    <form ng-submit="deleteArticle()">
+                        <button type="submit" class="btn btn-danger">Yes</button>
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">No</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 
+
+
+    <div class="modal fade" id="edit-modal">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title text-center"><b>Edit Article</b></h4>
+                </div>
+                <div class="modal-body">
+                    <form ng-submit="submitCreateArticle()" role="form" class="my-form fix-hack" ng-init="apiGetCat()">
+                        <label>Add Title</label>
+                        <input type="text" ng-model="article.title" class="form-control" class="input-title">
+                        <label>Add Categories</label>
+
+                        <select ng-model="article._category" ng-required="true" class="form-control" ng-options="category as category.name for category in categories track by category._id" />
+
+                        </select>
+                        <label>Add Description</label>
+                        <input type="text" ng-model="article.description" class="form-control" class="input-title">
+                        <label>Add Content</label>
+                        <text-angular ng-model="article.content"></text-angular>
+
+
+                        <label>Add Media</label>
+                        <input type="text" ng-model="article.media" class="form-control">
+
+                        <label>Add Tags</label>
+                        <tags-input use-strings="true" ng-model="article.tags">
+
+                        </tags-input>
+
+                    </form>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button ng-click="updateArticle()" type="button" class="btn btn-primary">Update</button>
+                </div>
+            </div>
+        </div>
     </div>
 
     <script>
@@ -93,6 +164,9 @@
             document.getElementById("openNav").style.display = "inline-block";
         }
     </script>
+
+
+
 
 </body>
 

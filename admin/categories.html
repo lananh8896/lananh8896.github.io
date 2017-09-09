@@ -42,6 +42,7 @@
         <div class="container">
 
             <h2>Quản lý chuyên mục</h2>
+            <p> All: ({{categories.length}})</p>
 
             <div class="table-responsive" ng-init="apiGetCat()">
                 <table class="table">
@@ -70,18 +71,93 @@
                 </table>
             </div>
 
-            <form ng-init="submitCreateCategory()">
+            <!-- <form ng-submit="submitCreateCategory()">
                 <h2>Thêm chuyên mục</h2>
                 <input class="input-title form-control" ng-model="newCategory.name" type="text" placeholder="Nhập tiêu đề">
                 <h2>Mô tả</h2>
                 <textarea class="input-title form-control" rows="5" ng-model="newCategory.description" type="text" placeholder="Nhập mô tả"></textarea><br>
                 <button type="submit" class="btn btn-default">Submit</button>
             </form>
+            <br> -->
+            <form ng-submit="submitCreateCategory()" method="POST" role="form" class="my-form fix-hack">
+                <label class="title_input">Add Title</label>
+                <input type="text" val="" ng-model="newCategory.name" class="form-control input-title cat-input">
+                <label class="title_input">Add Description</label>
+                <textarea class="form-control" val="" ng-model="newCategory.description" class="my-form-area cat-input" rows="5">
 
+                                    </textarea><br>
+
+
+                <button type="submit" class="btn btn-success right clearfix clear ">Publish</button><br></br>
+            </form>
 
         </div>
 
+        <!-- <div class="modal fade" id="modal-id">
+            <div class="modal-dialog ">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title text-center">Are you sure ?</h4>
+                    </div>
+                    <div class="modal-body">
 
+                        <button type="button" class="btn btn-primary right modal-btn" data-dismiss="modal">No</button>
+                        <button type="button" class="btn btn-default right modal-btn">Yes</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id='delete-modal'>
+            <div class="modal-dialog modal-sm">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title text-center">Do you sure?</h4>
+                    </div>
+                    <div class="modal-footer">
+                        <form ng-submit="deleteCategory()">
+                            <button type="submit" class="btn btn-danger">Yes</button>
+                            <button type="button" class="btn btn-primary" data-dismiss="modal">No</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade modal-edit" id="modal-id">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <form method="POST" role="form" class="my-form fix-hack">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                            <h3 class="modal-title">Edit</h3>
+                        </div>
+                        <div class="modal-body">
+
+                            <h3 class="title_input">Add Title</h3>
+                            <input type="text" val="" class="form-control input-title cat-input">
+                            <h3 class="title_input">Add Description</h3>
+                            <textarea class="form-control" val="" class="my-form-area cat-input" rows="5">
+
+                                    </textarea><br>
+
+
+
+
+
+                        </div>
+                        <div class="modal-footer">
+
+                            <button type="button" class="btn btn-success">Save changes</button>
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div> -->
 
 
     </div>
